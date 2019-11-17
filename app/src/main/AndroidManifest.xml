@@ -31,20 +31,20 @@
             android:parentActivityName=".MainActivity"
             android:label="Family"
             tools:targetApi="jelly_bean">
-        <!-- Parent activity meta-data to support 4.0 and lower -->
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MainActivity"/>
-         </activity>
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
 
         <activity android:name="com.example.android.spanlish.NumbersActivity"
             android:parentActivityName=".MainActivity"
             android:label="Numbers"
             tools:targetApi="jelly_bean">
-        <!-- Parent activity meta-data to support 4.0 and lower -->
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MainActivity"/>
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
         </activity>
 
         <activity android:name="com.example.android.spanlish.PhrasesActivity"
