@@ -7,22 +7,16 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:elevation="0dp">
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabGravity="fill"
-            app:tabMode="fixed"
-            app:tabSelectedTextColor="@android:color/white"
-            app:tabIndicator="@android:color/white"
-            app:tabTextColor="@color/clickable_fragment"/>
-
-    </com.google.android.material.appbar.AppBarLayout>
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        android:background="@color/primary_color"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabIndicator="@android:color/white"
+        app:tabTextColor="@color/clickable_fragment"/>
 
 
     <androidx.viewpager.widget.ViewPager

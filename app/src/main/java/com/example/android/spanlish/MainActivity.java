@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = findViewById(R.id.view_pager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
 
+        //getSupportActionBar().setElevation(0);
+
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(new NumbersFragment(), getString(R.string.category_numbers));
         viewPagerAdapter.addFragment(new FamilyFragment(), getString(R.string.category_family));

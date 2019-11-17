@@ -4,6 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/primary_color</item>
         <item name="colorPrimaryDark">@color/primary_dark_color</item>
+        <item name="actionBarStyle">@style/Theme.MyApp.ActionBar</item>
     </style>
 
     <!-- Style for a category of vocabulary words -->
@@ -32,4 +33,10 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
+
+    <style name="Theme.MyApp.ActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <!-- remove shadow below action bar -->
+        <item name="elevation">0dp</item>
+    </style>
+
 </resources>
