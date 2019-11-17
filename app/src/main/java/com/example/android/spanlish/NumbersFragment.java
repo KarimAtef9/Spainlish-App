@@ -62,7 +62,7 @@ public class NumbersFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView;
-        rootView = inflater.inflate(R.layout.activity_numbers, container, false);
+        rootView = inflater.inflate(R.layout.activity_words, container, false);
 
         final ArrayList<Word> words = generateWords();
 
@@ -71,7 +71,7 @@ public class NumbersFragment extends Fragment {
 
         final WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_numbers);
 
-        final ListView listView = rootView.findViewById(R.id.numbersList);
+        final ListView listView = rootView.findViewById(R.id.wordsList);
 
         listView.setAdapter(adapter);
 

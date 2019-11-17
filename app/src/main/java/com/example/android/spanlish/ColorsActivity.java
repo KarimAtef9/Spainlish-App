@@ -54,7 +54,7 @@ public class ColorsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_colors);
+        setContentView(R.layout.activity_words);
 
         final ArrayList<Word> words = generateWords();
 
@@ -63,7 +63,7 @@ public class ColorsActivity extends AppCompatActivity {
 
         WordAdapter adapter = new WordAdapter(this, words, R.color.category_colors);
 
-        ListView listView = (ListView) findViewById(R.id.colorsList);
+        ListView listView = (ListView) findViewById(R.id.wordsList);
         listView.setAdapter(adapter);
 
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);

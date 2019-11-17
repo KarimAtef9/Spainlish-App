@@ -52,7 +52,7 @@ public class FamilyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_family);
+        setContentView(R.layout.activity_words);
 
         final ArrayList<Word> words = generateWords();
 
@@ -61,7 +61,7 @@ public class FamilyActivity extends AppCompatActivity {
 
         WordAdapter adapter = new WordAdapter(this, words, R.color.category_family);
 
-        ListView listView = (ListView) findViewById(R.id.familyList);
+        ListView listView = (ListView) findViewById(R.id.wordsList);
         listView.setAdapter(adapter);
 
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
