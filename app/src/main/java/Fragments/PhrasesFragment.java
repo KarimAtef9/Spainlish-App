@@ -1,4 +1,4 @@
-package com.example.android.spanlish;
+package Fragments;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -11,13 +11,15 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-
 import androidx.fragment.app.Fragment;
+
+import com.example.android.spanlish.R;
+import com.example.android.spanlish.Word;
+import com.example.android.spanlish.WordAdapter;
 
 import java.util.ArrayList;
 
-
-public class NumbersFragment extends Fragment {
+public class PhrasesFragment extends Fragment {
     private MediaPlayer mediaPlayer;
     //bdl ma a7otha zy el 3adeya f onCreate 3shan mesh kol ma a3ozha acreate wa7da gidida !
     //keda asb7 global variable bst5dmo howa howa kol ma7tago bdl ma acreate f kol marra
@@ -50,14 +52,6 @@ public class NumbersFragment extends Fragment {
         }
     };
 
-
-    public NumbersFragment() {
-        // Required empty public constructor
-    }
-
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -67,12 +61,11 @@ public class NumbersFragment extends Fragment {
         final ArrayList<Word> words = generateWords();
 
         for (int i = 0; i < words.size(); i++)
-            Log.v("NumbersActivity", "Word at index "+i+": " + words.get(i).getEnglishWord());
+            Log.v("PhrasesActivity", "Word at index "+i+": " + words.get(i).getEnglishWord());
 
-        final WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_numbers);
+        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_phrases);
 
-        final ListView listView = rootView.findViewById(R.id.wordsList);
-
+        ListView listView = rootView.findViewById(R.id.wordsList);
         listView.setAdapter(adapter);
 
         audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
@@ -95,12 +88,12 @@ public class NumbersFragment extends Fragment {
                     //set up a listener on the media player
                     mediaPlayer.setOnCompletionListener(mCompletionListener);
                 }
-
             }
         });
 
         return rootView;
     }
+
 
     @Override
     public void onStop() {
@@ -109,35 +102,36 @@ public class NumbersFragment extends Fragment {
     }
 
     private ArrayList<Word> generateWords() {
-        ArrayList<Word> words = new ArrayList<>();
-        words.add(new Word("one", "Uno", R.drawable.numbers_one, R.raw.number_one));
-        words.add(new Word("two", "dos", R.drawable.numbers_two, R.raw.number_two));
-        words.add(new Word("three", "Tres", R.drawable.numbers_three, R.raw.number_three));
-        words.add(new Word("four", "cuatro", R.drawable.numbers_four, R.raw.number_four));
-        words.add(new Word("five", "cinco", R.drawable.numbers_five, R.raw.number_five));
-        words.add(new Word("six", "seis", R.drawable.numbers_six, R.raw.number_six));
-        words.add(new Word("seven", "Siete", R.drawable.numbers_seven, R.raw.number_seven));
-        words.add(new Word("eight", "ocho", R.drawable.numbers_eight, R.raw.number_eight));
-        words.add(new Word("nine", "nueve", R.drawable.numbers_nine, R.raw.number_nine));
-        words.add(new Word("ten", "diez", R.drawable.numbers_ten, R.raw.number_ten));
-        words.add(new Word("eleven", "once", R.drawable.numbers_eleven, R.raw.number_eleven));
-        words.add(new Word("twelve", "doce", R.drawable.numbers_twelve, R.raw.number_twelve));
-        words.add(new Word("thirteen", "trece", R.drawable.numbers_thirteen, R.raw.number_thirteen));
-        words.add(new Word("fourteen", "catorce", R.drawable.numbers_fourteen, R.raw.number_forteen));
-        words.add(new Word("fifteen", "quince", R.drawable.numbers_fifteen, R.raw.number_fifteen));
-        words.add(new Word("sixteen", "dieciséis", R.drawable.numbers_sixteen, R.raw.number_sixteen));
-        words.add(new Word("seventeen", "de diecisiete", R.drawable.numbers_seventeen, R.raw.number_seventeen));
-        words.add(new Word("eighteen", "Dieciocho", R.drawable.numbers_eighteen, R.raw.number_eighteen));
-        words.add(new Word("nineteen", "diecinueve", R.drawable.numbers_nineteen, R.raw.number_nineteen));
-        words.add(new Word("twenty", "veinte", R.drawable.numbers_twenty, R.raw.number_twenty));
-        words.add(new Word("thirty", "treinta", R.drawable.numbers_thirty, R.raw.number_thirty));
-        words.add(new Word("forty", "cuarenta", R.drawable.numbers_forty, R.raw.number_forty));
-        words.add(new Word("fifty", "cincuenta", R.drawable.numbers_fifty, R.raw.number_fifty));
-        words.add(new Word("sixty", "sesenta", R.drawable.numbers_sixty, R.raw.number_sixty));
-        words.add(new Word("seventy", "setenta", R.drawable.numbers_seventy, R.raw.number_seventy));
-        words.add(new Word("eighty", "ochenta", R.drawable.numbers_eighty, R.raw.number_eighty));
-        words.add(new Word("ninety", "noventa", R.drawable.numbers_ninety, R.raw.number_ninety));
-        words.add(new Word("hundred", "cien", R.drawable.numbers_hundred, R.raw.number_hundred));
+        ArrayList<Word> words = new ArrayList<Word>();
+        words.add(new Word("hello", "hola", R.raw.phrases_hello));
+        words.add(new Word("good morning", "buenos días", R.raw.phrases_goodmorning));
+        words.add(new Word("good afternoon", "buenas tardes", R.raw.phrases_goodafternoon));
+        words.add(new Word("good evening", "buenas noches", R.raw.phrases_goodevening));
+        words.add(new Word("goodbye", "adiós", R.raw.phrases_goodbye));
+        words.add(new Word("see you soon", "hasta pronto", R.raw.phrases_seeyousoon));
+        words.add(new Word("see ya", "nos vemos", R.raw.phrases_seeya));
+        words.add(new Word("How are you?", "Cómo estás?", R.raw.phrases_howareyou));
+        words.add(new Word("What’s up?", "Qué tal?", R.raw.phrases_whatsup));
+        words.add(new Word("What’s happening?", "Qué pasa?", R.raw.phrases_whatshappening));
+        words.add(new Word("What are you doing?", "Qué haces?", R.raw.phrases_whatareyoudoing));
+        words.add(new Word("Well, thanks. / Very well.", "Bien, gracias. / Muy bien.", R.raw.phrases_verywell));
+        words.add(new Word("All good.", "Todo bien.", R.raw.phrases_allgood));
+        words.add(new Word("Bad.", "Mal.", R.raw.phrases_bad));
+        words.add(new Word("Nothing.", "Nada.", R.raw.phrases_nothing));
+        words.add(new Word("I’m sorry.", "Lo siento.", R.raw.phrases_iamsorry));
+        words.add(new Word("Excuse me!", "Perdón!", R.raw.phrases_excuseme));
+        words.add(new Word("I love you.", "Te amo.", R.raw.phrases_iloveyou));
+        words.add(new Word("I need help", "Necesito ayuda.", R.raw.phrases_ineedhelp));
+        words.add(new Word("Have fun!", "Diviértete!", R.raw.phrases_havefun));
+        words.add(new Word("Good luck!", "Buena suerte!", R.raw.phrases_goodluck));
+        words.add(new Word("Take care!", "Cuídate!", R.raw.phrases_takecare));
+        words.add(new Word("Congratulations!", "Felicitaciones!", R.raw.phrases_congratulations));
+        words.add(new Word("Cheers!", "Salud!", R.raw.phrases_cheers));
+        words.add(new Word("Well done!", "Muy bien!", R.raw.phrases_welldone));
+        words.add(new Word("Welcome!", "Bienvenidos! / Bienvenidas!", R.raw.phrases_welcome));
+        words.add(new Word("Happy Birthday!", "Feliz Cumpleaños!", R.raw.phrases_happybirthday));
+        words.add(new Word("Merry Christmas!", "Feliz Navidad!", R.raw.phrases_merrychristmas));
+        words.add(new Word("Happy New Year!", "Feliz Año Nuevo!", R.raw.phrases_happynewyear));
 
         return words;
     }
