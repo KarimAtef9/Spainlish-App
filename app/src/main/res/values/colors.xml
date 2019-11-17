@@ -20,4 +20,6 @@
 
     <!-- Background color for the phrases category -->
     <color name="category_phrases">#ff9400</color>
+
+    <color name="clickable_fragment">#F8ABA8</color>
 </resources>
